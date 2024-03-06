@@ -5,7 +5,7 @@ var ignoreFolders = {
 
 exports.mainActivityJava = glob.sync('**/MainActivity.java', ignoreFolders)[0];
 exports.mainActivityKotlin = glob.sync('**/MainActivity.kt', ignoreFolders)[0];
-var mainApplicationJava = glob.sync('**/MainApplication.java', ignoreFolders)[0];
+var mainApplicationJava = glob.sync('**/MainApplication.{java,kt}', ignoreFolders)[0];
 exports.mainApplicationJava = mainApplicationJava;
 exports.rootGradle = mainApplicationJava.replace(/android\/app\/.*\.java/, 'android/build.gradle');
 
